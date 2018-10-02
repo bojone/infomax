@@ -7,7 +7,6 @@ from keras.models import Model
 from keras.layers import *
 from keras import backend as K
 from keras.optimizers import Adam
-from keras.callbacks import Callback
 from keras.datasets import cifar10
 
 
@@ -26,7 +25,6 @@ gamma = 0.01 # 先验分布的loss比重
 
 
 # 编码器（卷积与最大池化）
-
 x_in = Input(shape=(img_dim, img_dim, 3))
 x = x_in
 
