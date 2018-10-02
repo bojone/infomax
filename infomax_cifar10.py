@@ -123,6 +123,7 @@ model_train.add_loss(alpha * global_info_loss + beta * local_info_loss + gamma *
 model_train.compile(optimizer=Adam(1e-3))
 
 model_train.fit(x_train, epochs=50, batch_size=64)
+model_train.save_weights('total_model.cifar10.weights')
 
 
 # 输出编码器的特征
