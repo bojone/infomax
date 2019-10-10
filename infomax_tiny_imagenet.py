@@ -9,6 +9,7 @@ from keras.layers import *
 from keras import backend as K
 from keras.optimizers import Adam
 from tqdm import tqdm
+import tensorflow as tf
 
 
 imgs = glob.glob('tiny-imagenet-200/train/*/images/*')
@@ -77,7 +78,7 @@ prior_kl_loss = - 0.5 * K.mean(1 + z_log_var - K.square(z_mean) - K.exp(z_log_va
 # shuffle层，打乱第一个轴
 def shuffling(x):
     idxs = K.arange(0, K.shape(x)[0])
-    idxs = K.tf.random_shuffle(idxs)
+    idxs = tf.random_shuffle(idxs)
     return K.gather(x, idxs)
 
 
