@@ -29,7 +29,7 @@ x_in = Input(shape=(img_dim, img_dim, 3))
 x = x_in
 
 for i in range(3):
-    x = Conv2D(z_dim / 2**(2-i),
+    x = Conv2D(z_dim // 2**(2-i),
                kernel_size=(3,3),
                padding='SAME')(x)
     x = BatchNormalization()(x)
